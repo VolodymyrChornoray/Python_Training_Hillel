@@ -6,4 +6,4 @@
 my_str = "0123456789"
 for symbol_1 in my_str:
     for symbol_2 in my_str:
-        print(symbol_1 + symbol_2)
+        print(int(symbol_1 +symbol_2))
