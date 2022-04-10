@@ -57,9 +57,10 @@ print('>exercice # 5<')
 
 my_list = [1, 2, 3, 4]
 
-new_list = my_list + [my_list.pop(0)]
+value = my_list.pop(0)
+my_list.append(value)
 
-print(new_list)
+print(my_list)
 ################################################################################################################
 # 6. Дана строка в которой есть числа (разделяются пробелами).
 # Например "43 больше чем 34 но меньше чем 56". Найти сумму ВСЕХ ЧИСЕЛ (А НЕ ЦИФР) в этой строке.
@@ -144,16 +145,14 @@ print(result)
 
 print('>exercice # 11<')
 
-my_str = 'aabbbcccddddeeeeffffggggg'
+my_str = 'millenium'
+my_list = []
 
-################# solution 1 ###################
-result = [symbol for symbol in set(my_str)]
+for letter in my_str:
+    if my_str.count(letter) == 1:
+        my_list.append(letter)
 
-################# solution 2 ###################
-# result = list(set(my_str))
-result.sort()
-
-print(result)
+print(my_list)
 ################################################################################################################
 # 12. Даны две строки. Создать список в который поместить те символы,
 # которые есть в обеих строках хотя бы раз.
