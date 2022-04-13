@@ -4,29 +4,21 @@
 # перевернутую строку. "qwe" на "ewq".
 # Если на четном - оставить без изменения.
 # Задание сделать с использованием enumerate или range.
-
 print('>exercise # 1< \n')
 
 my_list = ['qwe', 'rty', 'str', 'ing', 'big']
 new_list = []
 
-list_odd = my_list[::2]
-odd_str = ', '.join(list_odd)
-# str_reverse = odd_str[::-1]
-str_reverse = (', '.join(my_list[::2]))[::-1]  # short code
-
-print(str_reverse)
-
-for index in enumerate(my_list):
-    if index == my_list[::2]:
-        new_list.append(str_reverse)
-
-print(new_list)
-
+for index in range(len(my_list)):
+    word = my_list[index]
+    if index % 2 == 0:
+        new_list.append(word[::-1])
+    else:
+        new_list.append(word)
+print(f'{new_list} \n')
 ################################################################################################################
 # 2. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list у которых первый символ - буква "a".
-
 print('>exercise # 2< \n')
 
 my_list = ['apple', 'orange', 'banana', 'cherry', 'avocado']
@@ -40,7 +32,6 @@ print(f'{new_list} \n')
 ################################################################################################################
 # 3. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list в которых есть символ - буква "a" на любом месте.
-
 print('>exercise # 3< \n')
 
 my_list = ['apple', 'orange', 'banana', 'cherry', 'avocado', ]
@@ -56,7 +47,6 @@ print(f'{new_list} \n')
 # а) Создать список и поместить туда имя самого молодого человека. Если возраст совпадает - поместить все имена самых молодых.
 # б) Создать список и поместить туда самое длинное имя. Если длина имени совпадает - поместить все такие имена.
 # в) Посчитать среднее количество лет всех людей из начального списка.
-
 print('>exercise # 4< \n')
 
 persons = [{'name': 'John', 'age': 11},
@@ -102,7 +92,6 @@ print(f'Average age = {average_age} \n')
 # если ключ есть в двух словарях - поместить пару {ключ: [значение_из_первого_словаря, значение_из_второго_словаря]},
 #
 # {1:1, 2:2}, {11:11, 2:22} ---> {1:1, 11:11, 2:[2, 22]}
-
 print('>exercise # 5< \n')
 
 my_dict_1 = {'key1': 1, 'key2': 2, 'key3': 3}
@@ -111,32 +100,27 @@ same_key = []
 different_key = []
 my_dict_3 = dict()
 merge_dict = dict()
-values = []
 
-print('key in the both dicts')
 for key in my_dict_1:
     if key in my_dict_2:
         same_key.append(key)
-print(same_key)
 
-print('key not in the second dict')
 for key in my_dict_1:
     if key not in my_dict_2:
         different_key.append(key)
-print(different_key)
 
-print('key & value not in the second dict')
 for key, value in my_dict_1.items():
     if key not in my_dict_2:
         my_dict_3[key] = value
-print(my_dict_3)
 
-print('merge two dicts')
+for key1, value1 in my_dict_1.items():
+    for key2, value2 in my_dict_2.items():
+        if key1 not in my_dict_2:
+            merge_dict[key1] = value1
+        if key2 not in my_dict_2:
+            merge_dict[key2] = value2
+        if key1 in my_dict_2:
+            merge_dict[key2] = [value1, value2]
 
-merge_dict = my_dict_1.copy()
-for key, value in my_dict_2.items():
-    if key not in merge_dict:
-    #     values = list(merge_dict.values())
-    #     values.append(value)
-
-print(values, merge_dict)
+print(f'List with same key: {same_key}\n', f'List with different keys: {different_key}\n',
+      f'Dictionary with different keys & values:{my_dict_3}\n', f'Dictionary with all keys and values: {merge_dict}')
