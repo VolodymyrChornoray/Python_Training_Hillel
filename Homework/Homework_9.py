@@ -156,15 +156,24 @@ domains = ['com', 'net', 'ua', 'gov', ]
 
 
 def create_email(names, domains):
-    choose_name = random.choice(names) + '.' + str(random.randint(100, 1000)) + '@'
+    choose_name = f'{random.choice(names)}.{str(random.randint(100, 1000))}@'
     various_letters = "".join([random.choice(string.ascii_lowercase) for _ in range(random.randint(5, 7))])
     # alphabet = string.ascii_lowercase
     # len_string = random.randint(5,7)
     # letters_list = [random.choice(alphabet) for _ in range(len_string)]
     # various_letters = "".join(letters_list)
-    choose_domain = various_letters + '.' + random.choice(domains)
+    choose_domain = f'{various_letters}.{random.choice(domains)}'
     result = choose_name + choose_domain
     return result
+
+
+# def create_email(domains, names):
+#     name = choice(names)
+#     number = randint(100, 999)
+#     some_str = "".join([choice(alphabet) for _ in range(randint(5, 7))])
+#     domain = choice(domains)
+#     return f"{name}.{number}@{some_str}.{domain}"
+
 
 
 e_mail = create_email(names, domains)
