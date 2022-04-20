@@ -148,7 +148,7 @@ print('>exercice # 11<')
 my_str = 'millenium'
 my_list = []
 
-for letter in my_str:
+for letter in set(my_str):
     if my_str.count(letter) == 1:
         my_list.append(letter)
 
