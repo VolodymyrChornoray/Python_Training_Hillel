@@ -147,10 +147,13 @@ print(my_result)
 # множества
 
 my_str = "qwerty123"
-my_list = []
-for symbol in my_str:
-    my_list.append(symbol)
+
+# my_list = []
+# for symbol in my_str:
+#     my_list.append(symbol)
+
 my_list = [symbol for symbol in my_str]
+
 print(my_list)
 
 limit_value = 10
@@ -165,7 +168,6 @@ alphabet = [chr(index) for index in range(ord("a"), ord("z") + 1)]
 print(alphabet)
 
 #####################################################################
-# генераторы списков
 # множества
 
 my_list = list('qwerty123ytrewq321')
@@ -194,4 +196,5 @@ print(result_difference)
 
 my_str = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqa"
 for symbol in set(my_str):
-    print(symbol)
+    symbol = list(symbol)
+print(symbol)
