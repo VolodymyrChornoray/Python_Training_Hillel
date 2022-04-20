@@ -9,6 +9,21 @@ print('>exercise # 1< \n')
 my_list = ['qwe', 'rty', 'str', 'ing', 'big']
 new_list = []
 
+# 1
+# new_list = []
+# for index, str_ in enumerate(my_list):
+#     if index % 2:
+#         new_list.append(str_[::-1])
+#     else:
+#         new_list.append(str_)
+# print(new_list)
+# # 2
+# new_list = my_list.copy()
+# for index, str_ in enumerate(my_list):
+#     if index % 2:
+#         new_list[index] = str_[::-1]
+# print(new_list)
+
 for index in range(len(my_list)):
     word = my_list[index]
     if index % 2 == 0:
@@ -23,10 +38,14 @@ print('>exercise # 2< \n')
 
 my_list = ['apple', 'orange', 'banana', 'cherry', 'avocado']
 new_list = []
-
+#1
 for word in my_list:
     if word.startswith('a'):
         new_list.append(word)
+# #2
+# for str_ in my_list:
+#     if "a" == str_[0]:
+#         new_list.append(str_)
 
 print(f'{new_list} \n')
 ################################################################################################################
@@ -36,10 +55,14 @@ print('>exercise # 3< \n')
 
 my_list = ['apple', 'orange', 'banana', 'cherry', 'avocado', ]
 new_list = []
-
+#1
 for word in my_list:
     if word.count('a'):
         new_list.append(word)
+# #2
+# for str_ in my_list:
+#     if "a" in str_:
+#         new_list.append(str_)
 
 print(f'{new_list} \n')
 ################################################################################################################
@@ -68,17 +91,18 @@ for key in persons:
 min_age = min(ages)
 max_len_name = max(longest_name)
 
-print('<Youngest person>')
-
+youngest = []
 for key in persons:
     if key['age'] == min_age:
-        print(key['name'])
+        youngest.append(key['name'])
 
-print('<Longest name>')
+print(f'Youngest person = {youngest} \n')
 
+longest = []
 for key in persons:
     if len(key['name']) == max_len_name:
-        print(key['name'])
+        longest.append(key['name'])
+print(f'Longest name = {longest} \n')
 
 average_age = sum(ages) / len(ages)  # средний возраст людей
 print(f'Average age = {average_age} \n')
@@ -121,6 +145,23 @@ for key1, value1 in my_dict_1.items():
             merge_dict[key2] = value2
         if key1 in my_dict_2:
             merge_dict[key2] = [value1, value2]
+# #2
+# result_1 = list(set(my_dict_1.keys()).intersection(set(my_dict_2.keys())))
+# print(result_1)
+#
+# result_2 = list(set(my_dict_1.keys()).difference(set(my_dict_2.keys())))
+# print(result_2)
+#
+# result_3 = {key: my_dict_1[key] for key in result_2}
+# print(result_3)
+#
+# result_4 = my_dict_1.copy()
+# for key in my_dict_2:
+#     if key in result_4:
+#         result_4[key] = [result_4[key], my_dict_2[key]]
+#     else:
+#         result_4[key] = my_dict_2[key]
+# print(result_4)
 
 print(f'List with same key: {same_key}\n', f'List with different keys: {different_key}\n',
       f'Dictionary with different keys & values:{my_dict_3}\n', f'Dictionary with all keys and values: {merge_dict}')
