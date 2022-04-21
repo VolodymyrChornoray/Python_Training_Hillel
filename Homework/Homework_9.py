@@ -175,6 +175,5 @@ def create_email(names, domains):
 #     return f"{name}.{number}@{some_str}.{domain}"
 
 
-
 e_mail = create_email(names, domains)
 print(e_mail)
